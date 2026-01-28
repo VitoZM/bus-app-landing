@@ -1,0 +1,595 @@
+<!doctype html>
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bus Express - Transparencia en Rutas y Reservas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1453a2',
+              secondary: '#4e891f',
+              'background-light': '#f6f7f8',
+              'background-dark': '#101922',
+              'bolivia-red': '#da291c',
+              'bolivia-yellow': '#f4e400',
+              'bolivia-green': '#007a33',
+            },
+            fontFamily: {
+              display: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+      }
+      .text-shadow-hero {
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-300"
+  >
+    <div
+      class="relative flex w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <div
+          class="px-4 md:px-40 flex flex-1 justify-center py-5 border-b border-solid border-b-[#f0f2f4] dark:border-b-slate-800 bg-white dark:bg-background-dark sticky top-0 z-50"
+        >
+          <div
+            class="layout-content-container flex flex-col max-w-[1200px] flex-1"
+          >
+            <header class="flex items-center justify-between whitespace-nowrap">
+              <div
+                class="flex items-center gap-4 text-[#111418] dark:text-white"
+              >
+                <div class="size-8 text-secondary">
+                  <span class="material-symbols-outlined text-4xl"
+                    >directions_bus</span
+                  >
+                </div>
+                <h2
+                  class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]"
+                >
+                  Bus Express
+                </h2>
+              </div>
+              <div class="flex flex-1 justify-end gap-8 items-center">
+                <div class="hidden md:flex items-center gap-9">
+                  <a
+                    class="text-[#111418] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors"
+                    href="#how-it-works"
+                    >Cómo funciona</a
+                  >
+                  <a
+                    class="text-[#111418] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors"
+                    href="#routes"
+                    >Rutas</a
+                  >
+                  <a
+                    class="text-[#111418] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors"
+                    href="#amenities"
+                    >Comodidades</a
+                  >
+                </div>
+                <button
+                  class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:brightness-110 transition-all"
+                >
+                  <span class="truncate">Descargar Ahora</span>
+                </button>
+              </div>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="px-4 md:px-40 flex flex-1 justify-center py-5">
+      <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+        <div class="@container">
+          <div class="@[480px]:p-0">
+            <div
+              class="flex min-h-[560px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-center px-6 @[480px]:px-16 relative overflow-hidden"
+              style="
+                background-image:
+                  linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0.6) 0%,
+                    rgba(0, 0, 0, 0) 60%
+                  ),
+                  url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUcAB9MmG8IqZ82T91o9Dgo0UIrsdnBmqL03hJgULQGKFp73BI8b0uyBolOxM4Al23NMhJgxxMTCQmYsdk7gL91MNzCM41aqOeylbe8eDtX_jgiiXikP52e84M5RwR5u549CDi_v-wARJ5RlELygaoe5t4QPRp7lNu-wPIqfIPw218ZUn3QocyAWQDrzPqsxgepyg_NDPZ0r4BpYWrbFZP3go9CJ41d7vLufUKS_lP38SITNogY7BmLf9VkIxNJbkKWlT0w8hTkQ');
+              "
+            >
+              <div class="flex flex-col gap-4 text-left max-w-[600px] z-10">
+                <div class="flex gap-2">
+                  <span class="h-1 w-8 bg-bolivia-red rounded-full"></span>
+                  <span class="h-1 w-8 bg-bolivia-yellow rounded-full"></span>
+                  <span class="h-1 w-8 bg-bolivia-green rounded-full"></span>
+                </div>
+                <h1
+                  class="text-white text-4xl font-extrabold leading-tight tracking-[-0.033em] @[480px]:text-6xl text-shadow-hero"
+                >
+                  Bolivia en Movimiento: Reserva tu Viaje con Confianza
+                </h1>
+                <h2
+                  class="text-white text-base font-normal leading-relaxed @[480px]:text-lg text-shadow-hero"
+                >
+                  La primera aplicación que ofrece total transparencia en rutas
+                  interprovinciales. Conoce cada parada en tu camino.
+                </h2>
+              </div>
+              <div class="flex-wrap gap-4 flex z-10">
+                <button
+                  class="flex min-w-[160px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-5 bg-white text-primary text-base font-bold leading-normal tracking-[0.015em] hover:scale-105 transition-transform shadow-lg"
+                >
+                  <span class="material-symbols-outlined text-secondary"
+                    >ios</span
+                  >
+                  <span class="truncate">App Store</span>
+                </button>
+                <button
+                  class="flex min-w-[160px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-5 bg-black/40 backdrop-blur-md border border-white/20 text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-black/60 transition-all"
+                >
+                  <span class="material-symbols-outlined text-secondary"
+                    >play_arrow</span
+                  >
+                  <span class="truncate">Play Store</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="px-4 md:px-40 flex flex-1 justify-center py-12"
+      id="how-it-works"
+    >
+      <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+        <div class="flex flex-col gap-10 @container">
+          <div class="flex flex-col gap-4">
+            <div
+              class="flex items-center gap-2 text-primary font-bold tracking-widest text-xs uppercase"
+            >
+              <span class="w-6 h-[1px] bg-primary"></span>
+              Transparencia en la Ruta
+            </div>
+            <h1
+              class="text-[#111418] dark:text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+            >
+              Más allá del Destino
+            </h1>
+            <p
+              class="text-[#617589] dark:text-gray-400 text-lg font-normal leading-relaxed max-w-[720px]"
+            >
+              Experimenta una transparencia total con nuestro seguimiento único
+              de rutas interurbanas y provinciales.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="flex flex-1 gap-5 rounded-xl border border-[#dbe0e6] dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 flex-col hover:shadow-lg transition-shadow"
+            >
+              <div
+                class="bg-secondary/10 text-secondary w-12 h-12 rounded-lg flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined">map</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <h2
+                  class="text-[#111418] dark:text-white text-lg font-bold leading-tight"
+                >
+                  Paradas Provinciales
+                </h2>
+                <p
+                  class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal"
+                >
+                  Identifica paradas exactas en provincias rurales como Oruro,
+                  Potosí y Chuquisaca antes de reservar.
+                </p>
+              </div>
+            </div>
+            <!-- <div
+              class="flex flex-1 gap-5 rounded-xl border border-[#dbe0e6] dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 flex-col hover:shadow-lg transition-shadow"
+            >
+              <div
+                class="bg-secondary/10 text-secondary w-12 h-12 rounded-lg flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined">explore</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <h2
+                  class="text-[#111418] dark:text-white text-lg font-bold leading-tight"
+                >
+                  Seguimiento de Ruta
+                </h2>
+                <p
+                  class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal"
+                >
+                  Mapas offline de alta fidelidad que muestran la elevación y
+                  calidad de las carreteras en los Andes.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex flex-1 gap-5 rounded-xl border border-[#dbe0e6] dark:border-slate-800 bg-white dark:bg-slate-900/50 p-6 flex-col hover:shadow-lg transition-shadow"
+            >
+              <div
+                class="bg-secondary/10 text-secondary w-12 h-12 rounded-lg flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined">share_location</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <h2
+                  class="text-[#111418] dark:text-white text-lg font-bold leading-tight"
+                >
+                  Estado en Vivo
+                </h2>
+                <p
+                  class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal"
+                >
+                  Actualizaciones GPS en tiempo real para que tu familia siga tu
+                  progreso, garantizando seguridad.
+                </p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="px-4 md:px-40 flex flex-1 justify-center pt-10" id="routes">
+      <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+        <div
+          class="flex justify-between items-end border-b border-[#f0f2f4] dark:border-slate-800 pb-4"
+        >
+          <div>
+            <h2
+              class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]"
+            >
+              Rutas Destacadas
+            </h2>
+            <p class="text-[#617589] dark:text-gray-400 mt-1">
+              Explora nuestras conexiones más populares en toda Bolivia
+            </p>
+          </div>
+          <a class="text-primary font-bold text-sm hover:underline" href="#"
+            >Ver todas las rutas</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="px-4 md:px-40 flex flex-1 justify-center py-5">
+      <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="group flex flex-col gap-3 pb-3 cursor-pointer">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl shadow-sm group-hover:shadow-md transition-all overflow-hidden relative"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCfc-6DCEIgwPIWwBHgDf0CJQAbJOf_W3l0ay8nRTkjzwb6F8yU3WbywDADKvo2Oq6TJ6HnlW55XhZtGTHoeS-v7MD9IoU3Y24HG5xdgcTfDLdUJqS2tl7HngLm8BkQmZqh7aN1g-kLUqJ0TlJ39ntQK9aBxVXFBorm_voum0I205infXfWcr6UloDXW6txy6Ssx98c_qbVjEDbC8OIQWZNSyTxsbwmi2JTE04zb83aHJstRFgD2EUryyQqWVd_AgBo3E_xHy70gw');
+              "
+            >
+              <div
+                class="absolute top-3 right-3 bg-bolivia-red text-white text-[10px] font-bold px-2 py-1 rounded uppercase"
+              >
+                Popular
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <p
+                  class="text-[#111418] dark:text-white text-lg font-bold leading-normal"
+                >
+                  La Paz a Uyuni
+                </p>
+              </div>
+              <p
+                class="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal flex items-center gap-1"
+              >
+                <span class="material-symbols-outlined text-sm text-secondary"
+                  >location_on</span
+                >
+                Vía Provincia de Oruro
+              </p>
+            </div>
+          </div>
+          <div class="group flex flex-col gap-3 pb-3 cursor-pointer">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl shadow-sm group-hover:shadow-md transition-all overflow-hidden relative"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1vXPjVmB7OaMzb_hYmcQtvlZLXp13jjfh1i19UPSmhMvsG1QhKkbWX3UpzW-lsKWuIozWsfxX9JK0NxbGPSJnvXLVmcLudqaEZMjc0bb4QnJqpu3Jkp6QZx8UqNvu4CcaOo3gOXXywCFXh_-moHLxkmqEZ8cKvZctC_w8i30NAP050dofRdoynwb4J_aqB9zYCi3_dr6VqbcCAnIeYWVoy5sq2nb1R1cnYeEsXw8_RmJfJyOS1ogBugUGyQjO32lwp3eSqUmNrw');
+              "
+            ></div>
+            <div>
+              <p
+                class="text-[#111418] dark:text-white text-lg font-bold leading-normal"
+              >
+                Santa Cruz a Sucre
+              </p>
+              <p
+                class="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal flex items-center gap-1"
+              >
+                <span class="material-symbols-outlined text-sm text-secondary"
+                  >location_on</span
+                >
+                Vía Provincia de Chuquisaca
+              </p>
+            </div>
+          </div>
+          <div class="group flex flex-col gap-3 pb-3 cursor-pointer">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl shadow-sm group-hover:shadow-md transition-all overflow-hidden relative"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCV5xHINyg8ysaHMoj6jUaHd6y1bQ-rhg-TfECOHam1PG8qhTKLx8WkzTk57Me2jOwvpS5I9irPzILBmIDw4Bfu6lSJqo4Y6ZDPXCo9HNipXeC3iH3kIJbp9aoy0hVdWa--sU7qKWYUkxl89sf7iXGDKG_JEvGxy-lgNHm9d9_qM2C9qHsWUwQajCwk7kYOj8tkTtQoGpFV4ldoDLT_sstqFUXi1sWp3pHr4azmX1foGaBXK6DJrHfl5ICsejPnQmQ5i-GyB3qpXw');
+              "
+            ></div>
+            <div>
+              <p
+                class="text-[#111418] dark:text-white text-lg font-bold leading-normal"
+              >
+                Cochabamba a Villa Tunari
+              </p>
+              <p
+                class="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal flex items-center gap-1"
+              >
+                <span class="material-symbols-outlined text-sm text-secondary"
+                  >location_on</span
+                >
+                Vía Provincia de Chapare
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="px-4 md:px-40 flex flex-1 justify-center py-16 bg-white dark:bg-slate-900/20"
+      id="amenities"
+    >
+      <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <div class="flex-1 space-y-6">
+            <h2 class="text-3xl font-bold dark:text-white">
+              Comodidades Premium
+            </h2>
+            <p class="text-[#617589] dark:text-gray-400 text-lg">
+              Nos asociamos con los mejores operadores en Bolivia para asegurar
+              que tu viaje de larga distancia sea lo más cómodo posible.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="flex items-center gap-3 p-4 bg-background-light dark:bg-background-dark rounded-lg"
+              >
+                <span class="material-symbols-outlined text-secondary"
+                  >wifi</span
+                >
+                <span class="font-medium dark:text-gray-200">Wi-Fi Gratis</span>
+              </div>
+              <div
+                class="flex items-center gap-3 p-4 bg-background-light dark:bg-background-dark rounded-lg"
+              >
+                <span class="material-symbols-outlined text-secondary"
+                  >airline_seat_recline_extra</span
+                >
+                <span class="font-medium dark:text-gray-200"
+                  >Asientos Full Cama</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 p-4 bg-background-light dark:bg-background-dark rounded-lg"
+              >
+                <span class="material-symbols-outlined text-secondary"
+                  >ac_unit</span
+                >
+                <span class="font-medium dark:text-gray-200"
+                  >Climatización</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 p-4 bg-background-light dark:bg-background-dark rounded-lg"
+              >
+                <span class="material-symbols-outlined text-secondary"
+                  >restaurant</span
+                >
+                <span class="font-medium dark:text-gray-200"
+                  >Snacks a bordo</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="flex-1 w-full">
+            <div class="grid grid-cols-2 gap-3">
+              <img
+                class="w-full h-40 object-cover rounded-lg"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfvhOUPRabclS2Zxczvsii0l1k2Rky58kkD-opFRDWzNmyL6z_lgy8O4yBTdhaj6FAydPyJ_Gea9a4FZcA9RQuDMmC5xtf-bDOV6rBSgnyrYjocIBwx5oA8Esli8GtHbTxluJCFz8x1-qxfAJQ356R6Z90sOD8bri3Yz43S0ZwJUJOW6PQysUD5zRtltK7-VkHiUf-3fHnjmMdg2Lc4ySmGkmroQn59UgZg73_xKxAFrG4C6yQJ9JZ2EnvXE7K7ZvXkgnRX7utcA"
+              />
+              <img
+                class="w-full h-40 object-cover rounded-lg"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9b9f20_qhm-1C2PzgSMUbMFlAHra1aG_bdXpeXA_IH-TN5__Le1cZbeQBSuLFLhqsoevBc4KYQ9zYD4wHI9HmwLyei7tAu56gCea5sZBvoTLuvHH_BXORSaKu3OQXyUvLYWMhDnfb8IxkZoA11jO21bmerDv_8R7RZSYd0v347DMrDbYbvEyoTD5rvlDQklceg81iqDhHksqq-qS9WqWbewYtRHj1rWwlsGyDM3sPPovYWzKM_3CnSu5LtmTZ2GGocI6wNsJrSg"
+              />
+              <div class="col-span-2">
+                <img
+                  class="w-full h-64 object-cover rounded-lg"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0DFGDJrQnawCgeoOQbfuluPbmb2exWQtDcYqomFwiXaG_rnjljkNEc2wU6BFpOBDFuFReX3ENjIBb2dFaOfd7w8WTUonNYEIvvQtM-AiAnSzTB-KnAq3Viyu8y3QXoS_Z1c5zI3Rr3PXTfXA2pj7OFT8y_2NFJgqX6PxDCsLQVugGh0RoGgfjbQtAEjAN-CUFpGgqFjoyy-4pZEQKUe0v1Gl0gkRE8IPvyrJeLYrgUgVWPAhzdy1u2xidl2Is5kXlwDmQGIULfg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="px-4 md:px-40 flex flex-1 justify-center py-20">
+      <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+        <div
+          class="bg-primary rounded-2xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 text-white relative overflow-hidden"
+        >
+          <div class="z-10 flex flex-col gap-4 max-w-[500px]">
+            <h2 class="text-3xl md:text-4xl font-extrabold">
+              ¿Listo para explorar Bolivia?
+            </h2>
+            <p class="text-white/80 text-lg">
+              Únete a más de 50,000 viajeros que reservan viajes en bus más
+              seguros y transparentes cada mes.
+            </p>
+            <div class="flex gap-4 mt-4">
+              <div
+                class="flex items-center gap-2 bg-black rounded-lg px-4 py-2 cursor-pointer border border-white/10 hover:bg-black/80 transition-colors"
+              >
+                <span class="material-symbols-outlined text-secondary"
+                  >ios</span
+                >
+                <div class="flex flex-col">
+                  <span class="text-[10px] leading-none uppercase"
+                    >Descargar en la</span
+                  >
+                  <span class="text-lg font-bold leading-none">App Store</span>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-2 bg-black rounded-lg px-4 py-2 cursor-pointer border border-white/10 hover:bg-black/80 transition-colors"
+              >
+                <span class="material-symbols-outlined text-secondary"
+                  >play_arrow</span
+                >
+                <div class="flex flex-col">
+                  <span class="text-[10px] leading-none uppercase"
+                    >Disponible en</span
+                  >
+                  <span class="text-lg font-bold leading-none">Play Store</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="z-10 bg-white/10 p-6 rounded-xl backdrop-blur-md border border-white/20"
+          >
+            <div class="flex flex-col gap-4">
+              <div
+                class="bg-white p-4 rounded-lg w-32 h-32 flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-secondary text-6xl"
+                  >qr_code_2</span
+                >
+              </div>
+              <p class="text-center text-sm font-bold">
+                Escanea para descargar
+              </p>
+            </div>
+          </div>
+          <div
+            class="absolute -bottom-20 -right-20 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"
+          ></div>
+          <div
+            class="absolute -top-20 -left-20 w-64 h-64 bg-bolivia-red/20 rounded-full blur-3xl"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="px-4 md:px-40 py-12 border-t border-[#f0f2f4] dark:border-slate-800 bg-white dark:bg-background-dark"
+    >
+      <div
+        class="layout-content-container flex flex-col max-w-[1200px] mx-auto"
+      >
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="col-span-2 md:col-span-1">
+            <div class="flex items-center gap-2 text-secondary mb-4">
+              <span class="material-symbols-outlined font-bold"
+                >directions_bus</span
+              >
+              <span class="text-xl font-bold text-primary">Bus Express</span>
+            </div>
+            <p class="text-sm text-[#617589] dark:text-gray-400">
+              Conectando los Andes con la Amazonía con tecnología moderna y
+              experiencia local.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-bold mb-4 dark:text-white">Enlaces Rápidos</h3>
+            <ul class="text-sm space-y-2 text-[#617589] dark:text-gray-400">
+              <li><a class="hover:text-primary" href="#">Buscar Rutas</a></li>
+              <li><a class="hover:text-primary" href="#">Operadores</a></li>
+              <li><a class="hover:text-primary" href="#">Guías de Viaje</a></li>
+              <li>
+                <a class="hover:text-primary" href="#">Centro de Ayuda</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold mb-4 dark:text-white">Compañía</h3>
+            <ul class="text-sm space-y-2 text-[#617589] dark:text-gray-400">
+              <li><a class="hover:text-primary" href="#">Sobre Nosotros</a></li>
+              <li><a class="hover:text-primary" href="#">Carreras</a></li>
+              <li><a class="hover:text-primary" href="#">Prensa</a></li>
+              <li><a class="hover:text-primary" href="#">Contacto</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold mb-4 dark:text-white">Legal</h3>
+            <ul class="text-sm space-y-2 text-[#617589] dark:text-gray-400">
+              <li><a class="hover:text-primary" href="#">Privacidad</a></li>
+              <li><a class="hover:text-primary" href="#">Términos</a></li>
+              <li><a class="hover:text-primary" href="#">Reembolsos</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-12 pt-8 border-t border-[#f0f2f4] dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-xs text-[#617589] dark:text-gray-500">
+            © <span id="current-year">2024</span> Bus Express App Inc. Todos los
+            derechos reservados. Hecho en La Paz.
+          </p>
+          <div class="flex gap-6">
+            <span
+              class="material-symbols-outlined text-[#617589] cursor-pointer hover:text-secondary"
+              >social_leaderboard</span
+            >
+            <span
+              class="material-symbols-outlined text-[#617589] cursor-pointer hover:text-secondary"
+              >alternate_email</span
+            >
+            <span
+              class="material-symbols-outlined text-[#617589] cursor-pointer hover:text-secondary"
+              >photo_camera</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        var el = document.getElementById('current-year');
+        if (el) el.textContent = new Date().getFullYear();
+      })();
+    </script>
+  </body>
+</html>
