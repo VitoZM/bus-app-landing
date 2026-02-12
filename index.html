@@ -13,6 +13,10 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: 'class',
@@ -514,73 +518,118 @@
       </div>
     </div>
     <footer
-      class="px-4 md:px-40 py-12 border-t border-[#f0f2f4] dark:border-slate-800 bg-white dark:bg-background-dark"
+      class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16 pb-8"
     >
-      <div
-        class="layout-content-container flex flex-col max-w-[1200px] mx-auto"
-      >
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="col-span-2 md:col-span-1">
-            <div class="flex items-center gap-2 text-secondary mb-4">
-              <span class="material-symbols-outlined font-bold"
-                >directions_bus</span
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div class="col-span-1 md:col-span-1">
+            <div class="flex items-center gap-2 mb-6">
+              <div
+                class="w-8 h-8 bg-primary flex items-center justify-center rounded"
               >
-              <span class="text-xl font-bold text-primary">Bus Express</span>
+                <span class="material-icons text-white text-sm"
+                  >directions_bus</span
+                >
+              </div>
+              <span class="text-lg font-bold text-primary tracking-tight"
+                >Bus Express</span
+              >
             </div>
-            <p class="text-sm text-[#617589] dark:text-gray-400">
-              Conectando los Andes con la Amazonía con tecnología moderna y
-              experiencia local.
+            <p
+              class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed"
+            >
+              Líderes en transporte terrestre digital en Bolivia. Viaja seguro,
+              viaja express.
             </p>
           </div>
           <div>
-            <h3 class="font-bold mb-4 dark:text-white">Enlaces Rápidos</h3>
-            <ul class="text-sm space-y-2 text-[#617589] dark:text-gray-400">
-              <li><a class="hover:text-primary" href="#">Buscar Rutas</a></li>
-              <li><a class="hover:text-primary" href="#">Operadores</a></li>
-              <li><a class="hover:text-primary" href="#">Guías de Viaje</a></li>
+            <h4 class="font-bold text-slate-800 dark:text-white mb-6">
+              Empresa
+            </h4>
+            <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
               <li>
-                <a class="hover:text-primary" href="#">Centro de Ayuda</a>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Sobre Nosotros</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Carreras</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Prensa</a
+                >
               </li>
             </ul>
           </div>
           <div>
-            <h3 class="font-bold mb-4 dark:text-white">Compañía</h3>
-            <ul class="text-sm space-y-2 text-[#617589] dark:text-gray-400">
-              <li><a class="hover:text-primary" href="#">Sobre Nosotros</a></li>
-              <li><a class="hover:text-primary" href="#">Carreras</a></li>
-              <li><a class="hover:text-primary" href="#">Prensa</a></li>
-              <li><a class="hover:text-primary" href="#">Contacto</a></li>
+            <h4 class="font-bold text-slate-800 dark:text-white mb-6">Legal</h4>
+            <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Términos de Servicio</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-primary transition-colors"
+                  href="politica-privacidad.html"
+                  >Política de Privacidad</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Política de Cookies</a
+                >
+              </li>
             </ul>
           </div>
           <div>
-            <h3 class="font-bold mb-4 dark:text-white">Legal</h3>
-            <ul class="text-sm space-y-2 text-[#617589] dark:text-gray-400">
-              <li><a class="hover:text-primary" href="#">Privacidad</a></li>
-              <li><a class="hover:text-primary" href="#">Términos</a></li>
-              <li><a class="hover:text-primary" href="#">Reembolsos</a></li>
-            </ul>
+            <h4 class="font-bold text-slate-800 dark:text-white mb-6">
+              Redes Sociales
+            </h4>
+            <div class="flex gap-6">
+              <a
+                class="text-[#617589] cursor-pointer hover:text-secondary"
+                href="#"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+              <a
+                class="text-[#617589] cursor-pointer hover:text-secondary"
+                href="#"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a
+                class="text-[#617589] cursor-pointer hover:text-secondary"
+                href="#"
+                aria-label="Twitter"
+              >
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+            </div>
           </div>
         </div>
         <div
-          class="mt-12 pt-8 border-t border-[#f0f2f4] dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4"
+          class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <p class="text-xs text-[#617589] dark:text-gray-500">
-            © <span id="current-year">2024</span> Bus Express App Inc. Todos los
-            derechos reservados. Hecho en La Paz.
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            © 2024 Bus Express S.R.L. Todos los derechos reservados.
           </p>
-          <div class="flex gap-6">
-            <span
-              class="material-symbols-outlined text-[#617589] cursor-pointer hover:text-secondary"
-              >social_leaderboard</span
-            >
-            <span
-              class="material-symbols-outlined text-[#617589] cursor-pointer hover:text-secondary"
-              >alternate_email</span
-            >
-            <span
-              class="material-symbols-outlined text-[#617589] cursor-pointer hover:text-secondary"
-              >photo_camera</span
-            >
+          <div class="flex items-center gap-2">
+            <img
+              alt="Bolivia"
+              data-alt="Bandera de Bolivia para representar mercado local"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyxXYuERhTGu5LYUrNJrDSR4PBdtOUcCppFW4YPrTnsw0GIH9K0-IpzG7e-eLn1BTJ_f2JhRfmH4ZFbBhBAJ4pHFfHFiJ0z5_Rv8uQtdHVDTGZodNNTZTYmGRY58uc-a0LSYl9y1pIkSEAo1A_J9lXgzNmVq2rXdumwb25ieebIbfNy78mHNcpz06OXb26go8VJJR6lkyDGBUoCMsPVd4r0mP9tkTAAMDVr13KeGzGJUc5aAvIG90PhIFJrORDWtBgmO9Q4P_Xbw"
+              srcset="https://flagcdn.com/w40/bo.png 2x"
+              width="20"
+            />
+            <span class="text-sm font-medium text-slate-500">Bolivia</span>
           </div>
         </div>
       </div>
