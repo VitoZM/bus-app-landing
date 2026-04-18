@@ -1,0 +1,166 @@
+<!doctype html>
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Icons – Bus Express</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1453a2',
+              secondary: '#4e891f',
+              'background-light': '#f6f7f8',
+              'background-dark': '#101922',
+            },
+            fontFamily: {
+              display: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-300 min-h-screen"
+  >
+    <!-- Header -->
+    <header
+      class="px-6 md:px-16 py-4 bg-white dark:bg-background-dark border-b border-[#f0f2f4] dark:border-slate-800 sticky top-0 z-50"
+    >
+      <div class="max-w-5xl mx-auto flex items-center justify-between">
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-primary font-bold text-lg"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Bus Express
+        </a>
+        <span
+          class="text-sm text-gray-500 dark:text-slate-400 font-medium tracking-wide uppercase"
+          >Icon Library</span
+        >
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-5xl mx-auto px-6 md:px-16 py-14">
+      <div class="mb-10">
+        <h1 class="text-3xl font-bold mb-2">Icon Library</h1>
+        <p class="text-gray-500 dark:text-slate-400">
+          All icons used across the Bus Express app.
+        </p>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <!-- Calendar -->
+        <div
+          class="bg-white dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center gap-4 shadow-sm border border-[#e8eaed] dark:border-slate-700"
+        >
+          <div class="bg-background-light dark:bg-slate-700 rounded-xl p-4">
+            <img
+              src="assets/icons/calendar.png"
+              alt="Calendar icon"
+              class="w-12 h-12 object-contain"
+            />
+          </div>
+          <div class="text-center">
+            <p class="font-semibold text-sm">Calendar</p>
+            <p
+              class="text-xs text-gray-400 dark:text-slate-500 mt-0.5 font-mono"
+            >
+              calendar.png
+            </p>
+          </div>
+        </div>
+
+        <!-- Clock -->
+        <div
+          class="bg-white dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center gap-4 shadow-sm border border-[#e8eaed] dark:border-slate-700"
+        >
+          <div class="bg-background-light dark:bg-slate-700 rounded-xl p-4">
+            <img
+              src="assets/icons/clock.png"
+              alt="Clock icon"
+              class="w-12 h-12 object-contain"
+            />
+          </div>
+          <div class="text-center">
+            <p class="font-semibold text-sm">Clock</p>
+            <p
+              class="text-xs text-gray-400 dark:text-slate-500 mt-0.5 font-mono"
+            >
+              clock.png
+            </p>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div
+          class="bg-white dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center gap-4 shadow-sm border border-[#e8eaed] dark:border-slate-700"
+        >
+          <div class="bg-background-light dark:bg-slate-700 rounded-xl p-4">
+            <img
+              src="assets/icons/location.png"
+              alt="Location icon"
+              class="w-12 h-12 object-contain"
+            />
+          </div>
+          <div class="text-center">
+            <p class="font-semibold text-sm">Location</p>
+            <p
+              class="text-xs text-gray-400 dark:text-slate-500 mt-0.5 font-mono"
+            >
+              location.png
+            </p>
+          </div>
+        </div>
+
+        <!-- User -->
+        <div
+          class="bg-white dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center gap-4 shadow-sm border border-[#e8eaed] dark:border-slate-700"
+        >
+          <div class="bg-background-light dark:bg-slate-700 rounded-xl p-4">
+            <img
+              src="assets/icons/user.png"
+              alt="User icon"
+              class="w-12 h-12 object-contain"
+            />
+          </div>
+          <div class="text-center">
+            <p class="font-semibold text-sm">User</p>
+            <p
+              class="text-xs text-gray-400 dark:text-slate-500 mt-0.5 font-mono"
+            >
+              user.png
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
